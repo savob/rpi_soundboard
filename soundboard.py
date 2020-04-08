@@ -64,6 +64,6 @@ while True: # Run forever
         playRandomFile(alarmFolder) # Play file from its folder
         
     if GPIO.input(beepButton) == GPIO.LOW:
-        #print("Alarm button was pushed!")
-        playRandomFile(beepFolder) # Play file from its folder
+        #print("Beep button was pushed!")
+        playRandomFile(beepFolder)
         
