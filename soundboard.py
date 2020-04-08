@@ -22,19 +22,21 @@ GPIO.setmode(GPIO.BOARD) # Use physical pin numbering to refer to pins
 #===============================================
 # Button Setup
 # Set the pins and folders to use
+# Set button pins to be an input pin and set initial value to be pulled up (on, 3.3v)
 
 # Pressing the alarm button will play a sound from the alarm folder
 alarmButton = 12
 alarmFolder = "/home/pi/Desktop/soundboard/alarm/"
+GPIO.setup(alarmButton, GPIO.IN, pull_up_down=GPIO.PUD_UP) 
 
 # Setup for beeps
 beepButton = 23
 beepFolder = "/home/pi/Desktop/soundboard/beep/"
-
-# Set button pins to be an input pin and set initial value to be pulled up (on, 3.3v)
-GPIO.setup(alarmButton, GPIO.IN, pull_up_down=GPIO.PUD_UP) 
 GPIO.setup(beepButton, GPIO.IN, pull_up_down=GPIO.PUD_UP) 
 
+#================================================
+# Code
+# Runs the show
 
 # Function to play a random file from a folder
 def playRandomFile(sourceFolder) :
