@@ -29,12 +29,12 @@ With everything set up on the RPi, the script tested, we need to configure the s
 2. Copy the location of the script
 3. Open the terminal
 4. Open `rc.local` for editing. **This script controls things that run on a successful boot.**
-   - `sudo nano /etc/rc.local/`
+   > `sudo nano /etc/rc.local/`
 5. Insert a line before `exit 0` to run the script
    - `sudo python <paste script location here\> &`
-   - The ampersand `&` at the end is required, so the script is run in it's own process and doesn't interfere with the rest of booting
+   - The ampersand `&` at the end is required, so the script is run in its own process and doesn't interfere with the rest of booting
 
-*Note: an example `rc.local` is included alongside the python script.` 
+*Note: an example `rc.local` is included alongside the python script.* 
 
 ### Setting up the hardware
 Hardware set up is trivial and left as an exercise for the pranker. In all seriousness, each "button" needs to simply short the input pin to ground when interacted with, typically pressed. You can also use levers, a conductive stylus or other things to act as switches/buttons.
